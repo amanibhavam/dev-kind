@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mini--pihole
+  name: kind--pihole
   namespace: argocd
 spec:
-  project: mini
+  project: kind
   source:
     repoURL: 'https://github.com/amanibhavam/dev-kind'
     path: pihole
     targetRevision: master
   destination:
-    name: mini
+    name: in-cluster
     namespace: pihole
   syncPolicy:
     automated:
