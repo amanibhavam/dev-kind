@@ -2,10 +2,14 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - https://github.com/letfn/katt-kuma/zone?ref=0.0.3
+  - https://github.com/letfn/katt-kuma/zone?ref=0.0.5
   - ingress.yaml
 
 patches:
+  - path: patch-deployment-kuma-control-plane.yaml
+    target:
+      kind: Deployment
+      name: kuma-control-plane
   - path: patch-nodeport-ingress.yaml
     target:
       kind: Service
