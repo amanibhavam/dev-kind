@@ -10,7 +10,7 @@ spec:
     path: kuma-zone
     targetRevision: master
   destination:
-    name: in-cluster
+    name: kind
     namespace: kuma-system
   syncPolicy:
     automated:

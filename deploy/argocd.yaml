@@ -10,7 +10,7 @@ spec:
     path: argocd
     targetRevision: master
   destination:
-    name: in-cluster
+    name: kind
     namespace: argocd
   syncPolicy:
     automated:

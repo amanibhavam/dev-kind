@@ -10,7 +10,7 @@ spec:
     path: traefik
     targetRevision: master
   destination:
-    name: in-cluster
+    name: kind
     namespace: traefik
   syncPolicy:
     automated:
