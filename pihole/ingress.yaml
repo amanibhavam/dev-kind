@@ -21,7 +21,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-  - match: Host(`pihole.defn.sh`)
+  - match: Host(`pihole.defn.ooo`)
     kind: Rule
     services:
     - name: pihole-web

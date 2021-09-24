@@ -21,7 +21,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-  - match: Host(`grafana.defn.sh`)
+  - match: Host(`grafana.defn.ooo`)
     kind: Rule
     services:
     - name: grafana
@@ -40,7 +40,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-  - match: Host(`prometheus.defn.sh`)
+  - match: Host(`prometheus.defn.ooo`)
     kind: Rule
     services:
     - name: prometheus-k8s

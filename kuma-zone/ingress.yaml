@@ -20,7 +20,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-  - match: Host(`kuma.defn.sh`)
+  - match: Host(`kuma.defn.ooo`)
     kind: Rule
     services:
     - name: kuma-external
