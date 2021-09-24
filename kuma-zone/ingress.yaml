@@ -35,6 +35,6 @@ metadata:
   namespace: kuma-system
 spec:
   type: ExternalName
-  externalName: 100.111.69.60
+  externalName: 100.101.28.35
   ports:
     - port: 5681
