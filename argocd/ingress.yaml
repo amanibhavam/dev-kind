@@ -21,7 +21,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-  - match: Host(`argocd.defn.ooo`)
+  - match: Host(`argocd.defn.sh`)
     kind: Rule
     services:
     - name: argocd-server

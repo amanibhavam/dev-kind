@@ -6,4 +6,4 @@
   value: cloudflare@defn.us
 - op: replace
   path: /spec/acme/solvers/0/selector/dnsZones/0
-  value: defn.ooo
+  value: defn.sh

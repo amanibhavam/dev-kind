@@ -21,7 +21,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-  - match: Host(`2048.defn.ooo`)
+  - match: Host(`2048.defn.sh`)
     kind: Rule
     services:
     - name: katt-2048
