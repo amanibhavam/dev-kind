@@ -25,6 +25,6 @@ spec:
     kind: Rule
     services:
     - name: pihole-web
-      port: 3000
+      port: 80
     middlewares:
       - name: traefik-forward-auth
