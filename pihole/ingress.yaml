@@ -1,0 +1,30 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: traefik-forward-auth
+  namespace: pihole
+spec:
+  forwardAuth:
+    address: http://traefik-forward-auth.traefik.svc.cluster.local:4181
+    authResponseHeaders:
+      - X-Forwarded-User
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: pihole
+  namespace: pihole
+spec:
+  tls:
+    certResolver: letsencrypt
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`pihole.defn.ooo`)
+    kind: Rule
+    services:
+    - name: pihole-web
+      port: 3000
+    middlewares:
+      - name: traefik-forward-auth
