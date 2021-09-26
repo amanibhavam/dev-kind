@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: kind--argowf
-  namespace: argowf
+  namespace: argocd
 spec:
   project: kind
   source:
