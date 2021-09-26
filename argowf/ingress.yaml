@@ -3,7 +3,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
   name: traefik-forward-auth
-  namespace: argowf
+  namespace: argo
 spec:
   forwardAuth:
     address: http://traefik-forward-auth.traefik.svc.cluster.local:4181
@@ -14,14 +14,14 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: argowf
-  namespace: argowf
+  namespace: argo
 spec:
   tls:
     certResolver: letsencrypt 
   entryPoints:
     - websecure
   routes:
-  - match: Host(`argowf.defn.ooo`)
+  - match: Host(`argo.defn.ooo`)
     kind: Rule
     services:
     - name: argowf-argo-workflows-server
