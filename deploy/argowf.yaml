@@ -11,7 +11,7 @@ spec:
     targetRevision: master
   destination:
     name: kind
-    namespace: argo
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true
