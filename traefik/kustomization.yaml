@@ -26,6 +26,10 @@ patches:
     target:
       kind: Deployment
       name: traefik
+  - path: patch-deployment-init.yaml
+    target:
+      kind: Deployment
+      name: traefik
   - path: patch-cluster-issuer.yaml
     target:
       kind: ClusterIssuer
