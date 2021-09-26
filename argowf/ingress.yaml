@@ -26,5 +26,6 @@ spec:
     services:
     - name: argo-server
       port: 2746
+      scheme: https
     middlewares:
       - name: traefik-forward-auth
