@@ -18,6 +18,10 @@ patches:
     target:
       kind: Service
       name: traefik
+  - path: patch-nodeport-tailscale.yaml
+    target:
+      kind: Service
+      name: traefik
   - path: patch-cluster-issuer.yaml
     target:
       kind: ClusterIssuer
