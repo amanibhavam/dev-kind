@@ -2,7 +2,7 @@
   path: /spec/ports/-
   value:
     name: cloudflared
-    port: 81
+    port: 8081
     protocol: TCP
     targetPort: cloudflared
     nodePort: 30081

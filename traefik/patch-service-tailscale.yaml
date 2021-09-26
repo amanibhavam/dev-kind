@@ -2,7 +2,7 @@
   path: /spec/ports/-
   value:
     name: tailscale
-    port: 82
+    port: 8082
     protocol: TCP
     targetPort: tailscale
     nodePort: 30082
