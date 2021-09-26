@@ -24,7 +24,7 @@ spec:
   - match: Host(`argowf.defn.ooo`)
     kind: Rule
     services:
-    - name: argowf-server
-      port: 80
+    - name: argowf-argo-workflows-server
+      port: 2746
     middlewares:
       - name: traefik-forward-auth
