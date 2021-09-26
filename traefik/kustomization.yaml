@@ -14,11 +14,11 @@ patches:
     target:
       kind: Service
       name: traefik
-  - path: patch-nodeport-cloudflared.yaml
+  - path: patch-service-cloudflared.yaml
     target:
       kind: Service
       name: traefik
-  - path: patch-nodeport-tailscale.yaml
+  - path: patch-service-tailscale.yaml
     target:
       kind: Service
       name: traefik
