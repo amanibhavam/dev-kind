@@ -1,0 +1,31 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: traefik-forward-auth
+  namespace: argo-rollouts
+spec:
+  forwardAuth:
+    address: http://traefik-forward-auth.traefik.svc.cluster.local:4181
+    authResponseHeaders:
+      - X-Forwarded-User
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: argo-rollouts
+  namespace: arg-rollouts
+spec:
+  tls:
+    certResolver: letsencrypt 
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`argo-rollouts.defn.ooo`)
+    kind: Rule
+    services:
+    - name: argo-rollouts-dashboard
+      port: 3100
+      scheme: https
+    middlewares:
+      - name: traefik-forward-auth

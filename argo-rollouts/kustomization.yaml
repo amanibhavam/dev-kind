@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
   - https://github.com/letfn/katt-argo-rollouts/base?ref=0.0.3
+  - ingress.yaml
