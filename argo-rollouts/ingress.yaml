@@ -26,6 +26,5 @@ spec:
     services:
     - name: argo-rollouts-dashboard
       port: 3100
-      scheme: https
     middlewares:
       - name: traefik-forward-auth
