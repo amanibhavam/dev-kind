@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kind--argowf
+  name: kind--argo-workflows
   namespace: argocd
 spec:
   project: kind
   source:
     repoURL: 'https://github.com/amanibhavam/dev-kind'
-    path: argowf
+    path: argo-workflows
     targetRevision: master
   destination:
     name: kind
