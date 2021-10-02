@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kind--argo-events
+  namespace: argocd
+spec:
+  project: kind
+  source:
+    repoURL: 'https://github.com/amanibhavam/dev-kind'
+    path: argo-events
+    targetRevision: master
+  destination:
+    name: kind
+    namespace: argo-events
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
