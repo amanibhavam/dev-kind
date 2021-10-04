@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kind--argo-workflows
+  name: kind--jenkins
   namespace: argocd
 spec:
   project: kind
