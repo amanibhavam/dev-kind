@@ -24,7 +24,7 @@ spec:
   - match: Host(`2048.defn.ooo`)
     kind: Rule
     services:
-    - name: katt-2048
+    - name: katt-2048-mesh
       port: 80
     middlewares:
       - name: traefik-forward-auth
