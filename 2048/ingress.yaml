@@ -12,7 +12,7 @@ spec:
   - match: Host(`2048.defn.ooo`)
     kind: Rule
     services:
-    - name: katt-2048
+    - name: katt-2048-mesh
       port: 80
 ---
 kind: Service
@@ -22,6 +22,6 @@ metadata:
   namespace: katt-2048
 spec:
   type: ExternalName
-  externalName: katt-2048.katt-2048.svc.cluster.local
+  externalName: katt-2048_katt-2048_svc_80.mesh
   ports:
     - port: 80
