@@ -1,9 +1,20 @@
 ---
 apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: traefik-forward-auth
+  namespace: katt-2048
+spec:
+  forwardAuth:
+    address: http://traefik-forward-auth.traefik.svc.cluster.local:4181
+    authResponseHeaders:
+      - X-Forwarded-User
+---
+apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: katt-2048
-  namespace: traefik
+  namespace: katt-2048
 spec:
   tls:
     certResolver: letsencrypt 
@@ -13,18 +24,7 @@ spec:
   - match: Host(`2048.defn.ooo`)
     kind: Rule
     services:
-    - name: katt-2048-mesh
+    - name: katt-2048
       port: 80
     middlewares:
       - name: traefik-forward-auth
----
-kind: Service
-apiVersion: v1
-metadata:
-  name: katt-2048-mesh
-  namespace: traefik
-spec:
-  type: ExternalName
-  externalName: katt-2048_katt-2048_svc_80.mesh
-  ports:
-    - port: 80
