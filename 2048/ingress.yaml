@@ -22,6 +22,6 @@ metadata:
   namespace: katt-2048
 spec:
   type: ExternalName
-  externalName: katt-2048_katt-2048_svc_80.mesh
+  externalName: katt-2048.katt-2048.svc.80.mesh
   ports:
     - port: 80
