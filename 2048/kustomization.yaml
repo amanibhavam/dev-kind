@@ -4,3 +4,9 @@ kind: Kustomization
 resources:
   - https://github.com/letfn/katt-2048/base?ref=0.0.2
   - ingress.yaml
+
+patches:
+  - path: patch-deployment-no-replicas.yaml
+    target:
+      kind: Deployment
+      name: katt-2048
