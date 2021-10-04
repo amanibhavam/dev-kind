@@ -24,25 +24,6 @@ spec:
   - match: Host(`2048.defn.ooo`)
     kind: Rule
     services:
-    - name: katt-2048
-      port: 80
-    middlewares:
-      - name: traefik-forward-auth
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: katt-2048-mesh
-  namespace: katt-2048
-spec:
-  tls:
-    certResolver: letsencrypt 
-  entryPoints:
-    - websecure
-  routes:
-  - match: Host(`2048-mesh.defn.ooo`)
-    kind: Rule
-    services:
     - name: katt-2048-mesh
       port: 80
     middlewares:
