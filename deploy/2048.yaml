@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kind--2048
+  namespace: argocd
+spec:
+  project: kind
+  source:
+    repoURL: 'https://github.com/amanibhavam/dev-kind'
+    path: '2048'
+    targetRevision: master
+  destination:
+    name: kind
+    namespace: katt-2048
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
