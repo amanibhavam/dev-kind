@@ -11,7 +11,7 @@ spec:
     targetRevision: master
   destination:
     name: kind
-    namespace: katt-2048
+    namespace: traefik
   syncPolicy:
     automated:
       prune: true
