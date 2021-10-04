@@ -1,3 +1,15 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: traefik-forward-auth
+  namespace: katt-2048
+spec:
+  forwardAuth:
+    address: http://traefik-forward-auth.traefik.svc.cluster.local:4181
+    authResponseHeaders:
+      - X-Forwarded-User
+---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
@@ -14,6 +26,8 @@ spec:
     services:
     - name: katt-2048-mesh
       port: 80
+    middlewares:
+      - name: traefik-forward-auth
 ---
 kind: Service
 apiVersion: v1
